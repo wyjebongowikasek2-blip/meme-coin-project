@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemeDev</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0, 255, 127, 1) 50%, rgba(0, 0, 0, 1) 50%);
+            animation: backgroundAnimation 10s infinite alternate, pulse 3s ease-in-out infinite;
+            color: #00ff7f;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animacja tła */
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* Efekt pulsowania tła */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Profile image and card styling */
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .profile-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 255, 127, 0.6);
+            text-align: center;
+            width: 300px;
+            position: relative;
+            z-index: 2;
+            margin-right: 30px;
+        }
+
+        .profile-card h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .profile-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .profile-card button {
+            background-color: #00ff7f;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .profile-card button:hover {
+            background-color: #00e67f;
+        }
+
+        .profile-card .crypto-info {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .crypto-info span {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .profile-card .socials {
+            margin-top: 20px;
+        }
+
+        /* Memecoin info section */
+        .memecoin-info {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            width: 400px;
+            border-radius: 20px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .memecoin-info h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .memecoin-info p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .memecoin-info img {
+            max-width: 100%;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+        
+        /* Bubble animation for the background */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(0, 255, 127, 0.5);
+            animation: bubbleAnimation 8s infinite;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @keyframes bubbleAnimation {
+            0% {
+                transform: scale(0.5) translateY(100vh);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2) translateY(50vh);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(0.5) translateY(-10vh);
+                opacity: 0;
+            }
+        }
+
+        /* Bubble styling */
+        .bubble:nth-child(1) { animation-duration: 8s; animation-delay: 0s; width: 50px; height: 50px; left: 10%; }
+        .bubble:nth-child(2) { animation-duration: 9s; animation-delay: 1s; width: 60px; height: 60px; left: 20%; }
+        .bubble:nth-child(3) { animation-duration: 7s; animation-delay: 2s; width: 40px; height: 40px; left: 30%; }
+        .bubble:nth-child(4) { animation-duration: 10s; animation-delay: 3s; width: 70px; height: 70px; left: 40%; }
+        .bubble:nth-child(5) { animation-duration: 8s; animation-delay: 4s; width: 50px; height: 50px; left: 50%; }
+        .bubble:nth-child(6) { animation-duration: 9s; animation-delay: 5s; width: 55px; height: 55px; left: 60%; }
+        .bubble:nth-child(7) { animation-duration: 8s; animation-delay: 6s; width: 45px; height: 45px; left: 70%; }
+        .bubble:nth-child(8) { animation-duration: 7s; animation-delay: 7s; width: 60px; height: 60px; left: 80%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <h1>MemeDev</h1>
+            <p>Probably deploying another memecoin right now 🤑<br>Solidity • Chaos • Memes</p>
+
+            <div class="crypto-info">
+                <p>ETH: $2942.97 (0.65%)</p>
+                <p>SOL: $124.06 (1.71%)</p>
+            </div>
+
+            <button onclick="window.location.href='https://x.com/wyjebongow95561';">X / Twitter</button>
+
+            <p>Built in the swamp 🍄</p>
+        </div>
+
+        <!-- Memecoin info section in English -->
+        <div class="memecoin-info">
+            <h2>What is a Memecoin?</h2>
+            <p>Memecoins are cryptocurrencies that were created mainly due to internet memes and internet culture. Some of them, like Dogecoin, gained massive popularity and saw a huge increase in value thanks to internet communities.</p>
+            <p>Memecoins don't always have real-world applications in the economy, but their popularity means they are often used for fun and experimentation with blockchain technology.</p>
+            <img src="/mnt/data/1f04f2c6-83bf-4cec-9c01-060c1db94078.png" alt="Axiom Logo">
+        </div>
+    </div>
+
+    <!-- Bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</body>
+</html>
